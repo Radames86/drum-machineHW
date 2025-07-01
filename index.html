@@ -20,6 +20,31 @@
         <div class="background-right"></div>
         <div class="arm"></div>
     </div>
+    <div id="count-display">Count: 0</div>
+   <div id="controls">
+        <h3>Drum Machine Controls</h3>
+        <label>
+            <input type="checkbox" id="metronome" checked>
+            Metronome
+        </label><br>
+        <label> 
+            <input type="checkbox" id="kick-drum" value="kick-drum">
+            Kick Drum
+            <input type="number" id="kick-drum-timing"  min="1" max="4">
+        </label><br>
+        <label>
+            <input type="checkbox" id="snare-drum" value="snare-drum">
+            Snare Drum
+            <input type="number" id="snare-drum-timing" min="1" max="4"> 
+        </label><br>
+        <label>
+            <input type="checkbox" id="hihat-drum" value="hihat-drum">
+            Hi Hat
+            <input type="number" id="hihat-drum-timing" min="1" max="4">
+        </label>
+
+    </div>
+    
 
     <script src="main.js"></script>
 </body>
