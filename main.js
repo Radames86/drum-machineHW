@@ -9,31 +9,43 @@ let count = 0
 function update() {
     count++
     const metronomeCount = (count % 4) + 1
-    document.querySelector('#count').innerText = metronomeCount
+    document.querySelector('#count-display').innerText = metronomeCount
     const metronomeCheckbox = document.querySelector('#metronome')
-    if(metronomeCheckbox.checked){
-    if (count % 4) {
-        tock.play()
-    } else {
-        tick.play()
-    }
-  }
+    if (metronomeCheckbox.checked) {
+        if (count % 4) {
+            tock.play()
+        } else {
+            tick.play()
+        }
+     }
     const kickCheckbox = document.querySelector('#kick-drum')
-    const kickTiming = document.querySelector('#kick-drum-timing').value
-    if(kickCheckbox.checked && Number(kickTiming) === metronomeCount){
-        kick.play()
+    if (kickCheckbox.checked) {
+        const kickTimingInput = document.querySelector('#kick-drum-timing')
+        const kickTiming = kickTimingInput.value
+        const kickBeat = Number(kickTiming)
+        if (kickBeat === metronomeCount) {
+            kick.play()
+        }
     }
+
     const snareCheckbox = document.querySelector('#snare-drum')
-    const snareTiming = document.querySelector('#snare-drum-timing').value
-    if(snareCheckbox.checked && Number(snareTiming) === metronomeCount){
-        snare.play()
+    if (snareCheckbox.checked) {
+        const snareTiming = document.querySelector('#snare-drum-timing').value
+        const snareBeat = Number(snareTiming)
+        if (snareBeat === metronomeCount) {
+            snare.play()
+        }
     }
-        
-    
+
     const hihatCheckbox = document.querySelector('#hihat-drum')
-    if(hihatCheckbox.checked){
-        
+    if (hihatCheckbox.checked) {
+        const hihatTiming = document.querySelector('#hihat-drum-timing').value
+        const hihatBeat = Number(hihatTiming)
+        if (hihatBeat === metronomeCount) {
+            hihat.play()
+        }
     }
+
 }
 
 
